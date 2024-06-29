@@ -17,10 +17,10 @@ users: string[] = ['Pepe', 'Maria', 'Juan', 'Andres'];
 visible: boolean = false;
 
 setVisible(): void {
-  this.visible = true;
+  this.visible = this.visible?false : true;
+  console.log(' Hemos hecho clic en setVisible');
 }
 
 //users: string[] = [];
 //users?: string[];
-
 }
