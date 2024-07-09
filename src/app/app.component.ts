@@ -18,9 +18,16 @@ subTitle = 'Contador con estado de session';
 users: string[] = ['Pepe', 'Maria', 'Juan', 'Andres'];
 visible: boolean = false;
 
+counter:number = 0;
+
 setVisible(): void {
   this.visible = this.visible?false : true;
   console.log(' Hemos hecho clic en setVisible');
+}
+
+setCounter(event:number): void {
+  this.counter = event;
+
 }
 
 //users: string[] = [];
