@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { CounterComponent } from './counter/counter.component';
@@ -11,7 +11,8 @@ import { CounterComponent } from './counter/counter.component';
   styleUrl: './app.component.css'
 })
 
-export class AppComponent {
+export class AppComponent implements OnInit{
+
   title = 'Hola Mundo BY Jhony';
 
 subTitle = 'Contador con estado de session';
@@ -19,6 +20,10 @@ users: string[] = ['Pepe', 'Maria', 'Juan', 'Andres'];
 visible: boolean = false;
 
 counter:number = 0;
+
+ngOnInit(): void {
+  this.counter = parseInt(localStorage.getItem('counter')!) || 0;
+}
 
 setVisible(): void {
   this.visible = this.visible?false : true;
